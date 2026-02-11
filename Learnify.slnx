@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Learnify.BLL/Learnify.BLL.csproj" />
+  <Project Path="Learnify.Dal/Learnify.DAL.csproj" />
+  <Project Path="Learnify.Domain/Learnify.Domain.csproj" />
+  <Project Path="Learnify.Shared/Learnify.Shared.csproj" />
+  <Project Path="Learnify/Learnify.csproj" />
+</Solution>
