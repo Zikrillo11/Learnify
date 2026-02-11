@@ -1,6 +1,4 @@
-using Learnify.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace Learnify.Controllers
 {
