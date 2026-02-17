@@ -4,7 +4,11 @@ namespace Learnify.Domain.Entities;
 
 public class Teacher : BaseEntity
 {
-    public string FullName { get; set; }
-    public string Phone { get; set; }
-    public string Specialty { get; set; }
+    // User bilan bog‘lovchi foreign key
+    public long UserId { get; set; }
+
+    // User navigation property — aynan shu kerak
+    public User User { get; set; } = null!;
+
+    public ICollection<Course> Courses { get; set; } = new List<Course>();
 }

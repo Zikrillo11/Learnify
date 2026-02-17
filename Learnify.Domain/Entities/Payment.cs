@@ -4,9 +4,11 @@ namespace Learnify.Domain.Entities;
 
 public class Payment : BaseEntity
 {
-    public long StudentId { get; set; }
-    public Student Student { get; set; }
     public decimal Amount { get; set; }
-    public DateTime PaidAt { get; set; } = DateTime.UtcNow;
-    public string Method { get; set; }
+
+    public long StudentId { get; set; }
+    public Student Student { get; set; } = null!;
+
+    public long CourseId { get; set; }
+    public Course Course { get; set; } = null!;
 }
