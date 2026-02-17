@@ -1,14 +1,16 @@
-﻿using Learnify.Domain.Common;
-using System.Text.RegularExpressions;
-
-namespace Learnify.Domain.Entities;
+﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
+using Learnify.Domain.Common;
+using Learnify.Domain.Entities;
 
 public class Course : BaseEntity
 {
-    public string Name { get; set; }
-    public decimal Price { get; set; }
-    public int DurationMonths { get; set; }
-    public string Description { get; set; }
+    public string Name { get; set; } = string.Empty;
+
     public long TeacherId { get; set; }
-    public Teacher Teacher { get; set; }
+    public Teacher Teacher { get; set; } = null!;
+
+    public long CategoryId { get; set; }         // Category foreign key
+    public Category Category { get; set; } = null!; // Category navigation property
+
+    public ICollection<Payment> Payments { get; set; } = new List<Payment>();
 }

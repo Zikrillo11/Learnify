@@ -3,10 +3,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Learnify.DAL.Data;
 
-public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
+public class AppDbContext : DbContext
 {
-    public DbSet<Course> Courses { get; set; }
-    public DbSet<Student> Students { get; set; }
-    public DbSet<Teacher> Teachers { get; set; }
-    public DbSet<Payment> Payments { get; set; }
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options)
+    {
+    }
+
+    // DbSet lar
+    public DbSet<User> Users => Set<User>();
+    public DbSet<Student> Students => Set<Student>();
+    public DbSet<Teacher> Teachers => Set<Teacher>();
+    public DbSet<Course> Courses => Set<Course>();
+    public DbSet<Payment> Payments => Set<Payment>();
+    public DbSet<Category> Categories => Set<Category>();
 }
