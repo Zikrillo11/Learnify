@@ -2,7 +2,5 @@
 
 public class TeacherForCreateDto
 {
-    public string FullName { get; set; }
-    public string Phone { get; set; }
-    public string Specialty { get; set; }
+    public long UserId { get; set; }
 }
