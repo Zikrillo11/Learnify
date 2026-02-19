@@ -7,10 +7,10 @@ public class Course : BaseEntity
     public string Name { get; set; } = string.Empty;
 
     public long TeacherId { get; set; }
-    public Teacher Teacher { get; set; } = null!;
+    public Teacher Teacher { get; set; }
 
-    public long CategoryId { get; set; }         // Category foreign key
-    public Category Category { get; set; } = null!; // Category navigation property
+    public long CategoryId { get; set; }       
+    public Category Category { get; set; }
 
     public ICollection<Payment> Payments { get; set; } = new List<Payment>();
 }

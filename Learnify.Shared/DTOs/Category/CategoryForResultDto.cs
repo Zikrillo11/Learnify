@@ -1,9 +1,9 @@
-﻿namespace Learnify.Shared.DTOs.Teacher;
+﻿namespace Learnify.Shared.DTOs.Category;
 
-public class TeacherForResultDto
+public class CategoryForResultDto
 {
     public long Id { get; set; }
-    public long UserId { get; set; }
+    public string Name { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
     public bool IsDeleted { get; set; }
