@@ -3,10 +3,10 @@
 public class PaymentForResultDto
 {
     public long Id { get; set; }
-    public long StudentId { get; set; }
     public decimal Amount { get; set; }
-    public DateTime PaidAt { get; set; }
-    public string Method { get; set; }
+    public long StudentId { get; set; }
+    public long CourseId { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
+    public bool IsDeleted { get; set; }
 }
