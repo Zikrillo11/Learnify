@@ -4,5 +4,9 @@ namespace Learnify.DAL.Interfaces;
 
 public interface IPaymentRepository
 {
-    IQueryable<Payment> GetFullInfo();
+    Task<IEnumerable<Payment>> GetAllAsync();
+    Task<Payment?> GetByIdAsync(long id);
+    Task AddAsync(Payment payment);
+    void Update(Payment payment);
+    Task SaveChangesAsync();
 }

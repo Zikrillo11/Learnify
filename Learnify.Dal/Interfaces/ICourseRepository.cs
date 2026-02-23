@@ -4,5 +4,9 @@ namespace Learnify.DAL.Interfaces;
 
 public interface ICourseRepository
 {
-    IQueryable<Course> GetFullInfo();
+    Task<IEnumerable<Course>> GetAllAsync();
+    Task<Course?> GetByIdAsync(long id);
+    Task AddAsync(Course course);
+    void Update(Course course);
+    Task SaveChangesAsync();
 }

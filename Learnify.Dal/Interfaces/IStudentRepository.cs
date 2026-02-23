@@ -4,5 +4,9 @@ namespace Learnify.DAL.Interfaces;
 
 public interface IStudentRepository
 {
-    IQueryable<Student> GetAllWithUser();
+    Task<IEnumerable<Student>> GetAllAsync();
+    Task<Student?> GetByIdAsync(long id);
+    Task AddAsync(Student student);
+    void Update(Student student);
+    Task SaveChangesAsync();
 }

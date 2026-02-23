@@ -4,5 +4,9 @@ namespace Learnify.DAL.Interfaces;
 
 public interface ITeacherRepository
 {
-    IQueryable<Teacher> GetAllWithUser();
+    Task<IEnumerable<Teacher>> GetAllAsync();
+    Task<Teacher?> GetByIdAsync(long id);
+    Task AddAsync(Teacher teacher);
+    void Update(Teacher teacher);
+    Task SaveChangesAsync();
 }
