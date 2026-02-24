@@ -1,8 +1,8 @@
 ﻿using Learnify.Domain.Entities;
+using Learnify.Domain.Interfaces.Common;
 
-namespace Learnify.DAL.Interfaces;
+namespace Learnify.Domain.Interfaces.Courses;
 
-public interface ICourseRepository
+public interface ICourseRepository : IRepository<Course>
 {
-    IQueryable<Course> GetFullInfo();
 }

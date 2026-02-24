@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Learnify.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260217103534_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260221111519_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

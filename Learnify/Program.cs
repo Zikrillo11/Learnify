@@ -1,6 +1,9 @@
 using Learnify.DAL.Data;
-using Learnify.DAL.Interfaces;
-using Learnify.DAL.Repositories;
+using Learnify.Domain.Interfaces.Courses;
+using Learnify.Domain.Interfaces.Payments;
+using Learnify.Domain.Interfaces.Students;
+using Learnify.Domain.Interfaces.Teachers;
+using Learnify.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,8 +1,8 @@
 ﻿using Learnify.Domain.Entities;
+using Learnify.Domain.Interfaces.Common;
 
-namespace Learnify.DAL.Interfaces;
+namespace Learnify.Domain.Interfaces.Students;
 
-public interface IStudentRepository
+public interface IStudentRepository : IRepository<Student>
 {
-    IQueryable<Student> GetAllWithUser();
 }
