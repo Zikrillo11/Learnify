@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Learnify.BLL.Interfaces;
-using Learnify.DAL.Interfaces;
-using Learnify.Domain.Entities;
+using Learnify.Domain.Interfaces.Courses;
 using Learnify.Shared.DTOs.Course;
 
 namespace Learnify.BLL.Services;

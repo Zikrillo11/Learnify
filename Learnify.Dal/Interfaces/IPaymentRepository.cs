@@ -1,12 +1,9 @@
 ﻿using Learnify.Domain.Entities;
+using Learnify.Domain.Interfaces.Common;
 
-namespace Learnify.DAL.Interfaces;
+namespace Learnify.Domain.Interfaces.Payments;
 
-public interface IPaymentRepository
+public interface IPaymentRepository : IRepository<Payment>
 {
-    Task<IEnumerable<Payment>> GetAllAsync();
-    Task<Payment?> GetByIdAsync(long id);
-    Task AddAsync(Payment payment);
-    void Update(Payment payment);
-    Task SaveChangesAsync();
+    Task<IEnumerable<Payment>> GetByStudentIdAsync(long studentId);
 }

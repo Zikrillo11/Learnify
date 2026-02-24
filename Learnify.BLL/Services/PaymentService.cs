@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Learnify.BLL.Interfaces;
-using Learnify.DAL.Interfaces;
 using Learnify.Domain.Entities;
+using Learnify.Domain.Interfaces.Payments;
 using Learnify.Shared.DTOs.Payment;
 
 public class PaymentService : IPaymentService

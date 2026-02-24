@@ -1,17 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Learnify.DAL.Data;
-using Learnify.DAL.Interfaces;
+﻿using Learnify.DAL.Data;
 using Learnify.Domain.Entities;
+using Learnify.Domain.Interfaces.Teachers;
+using Learnify.Infrastructure.Repositories.Common;
 
-namespace Learnify.DAL.Repositories;
-
-public class TeacherRepository(AppDbContext context)
-    : Repository<Teacher>(context), ITeacherRepository
+public class TeacherRepository
+    : Repository<Teacher>, ITeacherRepository
 {
-    public IQueryable<Teacher> GetAllWithUser()
-        => _dbSet
-            .Include(t => t.User)
-            .Include(t => t.Courses)
-            .OrderByDescending(t => t.CreatedAt)
-            .AsNoTracking();
+    public TeacherRepository(AppDbContext context)
+        : base(context)
+    {
+    }
 }

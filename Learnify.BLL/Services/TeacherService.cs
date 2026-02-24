@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Learnify.BLL.Interfaces;
-using Learnify.DAL.Interfaces;
 using Learnify.Domain.Entities;
+using Learnify.Domain.Interfaces.Teachers;
 using Learnify.Shared.DTOs.Teacher;
 
 namespace Learnify.BLL.Services;

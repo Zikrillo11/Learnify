@@ -1,12 +1,8 @@
 ﻿using Learnify.Domain.Entities;
+using Learnify.Domain.Interfaces.Common;
 
-namespace Learnify.DAL.Interfaces;
+namespace Learnify.Domain.Interfaces.Students;
 
-public interface IStudentRepository
+public interface IStudentRepository : IRepository<Student>
 {
-    Task<IEnumerable<Student>> GetAllAsync();
-    Task<Student?> GetByIdAsync(long id);
-    Task AddAsync(Student student);
-    void Update(Student student);
-    Task SaveChangesAsync();
 }
