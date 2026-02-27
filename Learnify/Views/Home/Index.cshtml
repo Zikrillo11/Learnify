@@ -1,59 +1,130 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Edukate - Online Education</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries CSS -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
-</head>
-
-<body>
-    <h1>Hello Edukate Frontend!</h1>
-    <p>This is your Visual Studio frontend setup.</p>
-
-    <!-- JS Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Custom JS -->
-    <script src="js/main.js"></script>
-</body>
-@{
-    ViewData["Title"] = "Home Page";
+﻿@{
+    ViewData["Title"] = "Home";
 }
 
-<div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;">
-    <div class="container text-center my-5 py-5">
-        <h1 class="text-white mt-4 mb-4">Learn From Home</h1>
-        <h1 class="text-white display-1 mb-5">Education Courses</h1>
-        <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
-            <div class="input-group">
-                <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="Keyword">
-                <div class="input-group-append">
-                    <button class="btn btn-secondary px-4 px-lg-5">Search</button>
+<!-- HERO SECTION -->
+<section class="py-5" style="background: linear-gradient(135deg,#1e3c72,#2a5298); color:white;">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold mb-4">
+                    Welcome to <span style="color:#00ffc8;">Learnify</span>
+                </h1>
+                <p class="lead mb-4">
+                    Zamonaviy online o‘quv platforma. Istalgan joyda, istalgan vaqtda o‘rganing.
+                </p>
+                <a href="#" class="btn btn-light btn-lg px-4 me-3">Start Learning</a>
+                <a href="#" class="btn btn-outline-light btn-lg px-4">Explore Courses</a>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+                     class="img-fluid"
+                     style="max-height:400px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Why Choose Learnify?</h2>
+            <p class="text-muted">Biz bilan o‘rganish oson va samarali</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="p-4 shadow rounded-4 bg-white h-100">
+                    <h4 class="fw-bold mb-3">🚀 Fast Learning</h4>
+                    <p class="text-muted">
+                        Qisqa va aniq darslar orqali tez o‘rganish imkoniyati.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="p-4 shadow rounded-4 bg-white h-100">
+                    <h4 class="fw-bold mb-3">🎯 Professional Mentors</h4>
+                    <p class="text-muted">
+                        Tajribali ustozlar bilan interaktiv o‘qish tizimi.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="p-4 shadow rounded-4 bg-white h-100">
+                    <h4 class="fw-bold mb-3">📚 Many Courses</h4>
+                    <p class="text-muted">
+                        Dasturlash, dizayn va boshqa ko‘plab yo‘nalishlar.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="container-fluid py-5">
-    <div class="container py-5">
-    </div>
-</div>
+</section>
 
-</html>
+<!-- COURSES SECTION -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Popular Courses</h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card border-0 shadow rounded-4 overflow-hidden">
+                    <div style="background:#1e3c72;height:120px;"></div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">ASP.NET Core</h5>
+                        <p class="text-muted">Web development professional daraja</p>
+                        <span class="badge bg-success">Advanced</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card border-0 shadow rounded-4 overflow-hidden">
+                    <div style="background:#ff512f;height:120px;"></div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Frontend Mastery</h5>
+                        <p class="text-muted">HTML, CSS, JavaScript</p>
+                        <span class="badge bg-primary">Popular</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card border-0 shadow rounded-4 overflow-hidden">
+                    <div style="background:#11998e;height:120px;"></div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">UI/UX Design</h5>
+                        <p class="text-muted">Professional design systems</p>
+                        <span class="badge bg-warning text-dark">New</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="py-5" style="background: linear-gradient(135deg,#ff512f,#dd2476); color:white;">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Start Your Journey Today 🚀</h2>
+        <a href="#" class="btn btn-light btn-lg px-5">Join Now</a>
+    </div>
+</section>
+@{
+    ViewData["Title"] = "About";
+}
+
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h1 class="fw-bold mb-4">About Learnify</h1>
+        <p class="lead text-muted">
+            Learnify — bu zamonaviy online ta’lim platformasi.
+            Dasturlash, dizayn va boshqa ko‘plab yo‘nalishlarda kurslar mavjud.
+        </p>
+    </div>
+</section>
