@@ -2,7 +2,7 @@
 
 public class CourseForCreateDto
 {
-    public string Name { get; set; } = string.Empty;
+    public string Name { get; set; }
     public long TeacherId { get; set; }
     public long CategoryId { get; set; }
 }
