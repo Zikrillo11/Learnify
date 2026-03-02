@@ -2,7 +2,7 @@
 
 namespace Learnify.Controllers
 {
-    public class AboutController : Controller
+    public class CoursesController : Controller
     {
         public IActionResult Index()
         {
