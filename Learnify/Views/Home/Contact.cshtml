@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+<style>
+    .contact-hero {
+        background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216') center/cover no-repeat;
+        position: relative;
+        color: white;
+    }
+
+        .contact-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+        }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .glass-card {
+        background: rgba(255,255,255,0.9);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .form-control {
+        border-radius: 12px;
+        padding: 12px;
+    }
+
+    .btn-send {
+        border-radius: 30px;
+        padding: 10px 30px;
+    }
+</style>
+
+<!-- HERO -->
+<section class="contact-hero py-5 text-center">
+    <div class="container py-5 hero-content">
+        <h1 class="display-3 fw-bold">Contact Us 📞</h1>
+        <p class="lead">Biz bilan bog‘laning</p>
+    </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="glass-card">
+
+                    <form>
+                        <div class="mb-3">
+                            <label>Full Name</label>
+                            <input class="form-control" placeholder="Your Name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Email</label>
+                            <input type="email" class="form-control" placeholder="example@gmail.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Message</label>
+                            <textarea class="form-control" rows="4"
+                                      placeholder="Write your message..."></textarea>
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-primary btn-send">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
