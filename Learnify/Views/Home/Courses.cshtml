@@ -1,0 +1,219 @@
+﻿@{
+    ViewData["Title"] = "Courses";
+}
+
+<style>
+    .courses-header {
+        background: linear-gradient(90deg,#4e73df,#1cc88a);
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .course-box {
+        border-radius: 18px;
+        padding: 30px;
+        transition: 0.35s;
+        color: white;
+    }
+
+        .course-box:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+        }
+
+    .bg-backend {
+        background: linear-gradient(135deg,#667eea,#764ba2);
+    }
+
+    .bg-frontend {
+        background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+        color: #333;
+    }
+
+    .bg-uiux {
+        background: linear-gradient(135deg,#43e97b,#38f9d7);
+        color: #333;
+    }
+
+    .enroll-btn {
+        border-radius: 30px;
+        margin-top: 15px;
+    }
+
+    .info-box {
+        padding: 30px;
+        border-radius: 20px;
+        background: white;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+        transition: 0.3s;
+    }
+
+        .info-box:hover {
+            transform: translateY(-8px);
+        }
+</style>
+
+<!-- HERO -->
+<section class="courses-header">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Explore Our Courses 🎓</h1>
+        <p class="lead">Kasbingizni tanlang va professional darajaga chiqing</p>
+    </div>
+</section>
+
+
+<!-- SEARCH / FILTER -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row g-3 justify-content-center">
+
+            <div class="col-md-6">
+                <input class="form-control form-control-lg rounded-pill"
+                       placeholder="Search courses...">
+            </div>
+
+            <div class="col-md-3">
+                <select class="form-select form-select-lg rounded-pill">
+                    <option>All Categories</option>
+                    <option>Backend</option>
+                    <option>Frontend</option>
+                    <option>Design</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- COURSES -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="course-box bg-backend h-100">
+                    <h4>.NET Backend</h4>
+                    <p>Server-side development</p>
+                    <ul>
+                        <li>ASP.NET Core</li>
+                        <li>Web API</li>
+                        <li>EF Core</li>
+                        <li>Clean Architecture</li>
+                    </ul>
+                    <a href="#" class="btn btn-light enroll-btn w-100">Enroll</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="course-box bg-frontend h-100">
+                    <h4>Frontend Development</h4>
+                    <p>Modern UI building</p>
+                    <ul>
+                        <li>HTML & CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                    <a href="#" class="btn btn-dark enroll-btn w-100">Enroll</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="course-box bg-uiux h-100">
+                    <h4>UI/UX Design</h4>
+                    <p>Creative design skills</p>
+                    <ul>
+                        <li>Figma</li>
+                        <li>Prototyping</li>
+                        <li>User Research</li>
+                        <li>Wireframing</li>
+                    </ul>
+                    <a href="#" class="btn btn-dark enroll-btn w-100">Enroll</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- WHY OUR COURSES -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+
+        <h2 class="fw-bold mb-5">Why Our Courses?</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="info-box h-100">
+                    <h5 class="fw-bold">🎯 Practical Learning</h5>
+                    <p class="text-muted">
+                        Real loyihalar orqali tajriba orttirasiz.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-box h-100">
+                    <h5 class="fw-bold">👨‍🏫 Expert Mentors</h5>
+                    <p class="text-muted">
+                        Tajribali ustozlardan saboq olasiz.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-box h-100">
+                    <h5 class="fw-bold">🚀 Career Support</h5>
+                    <p class="text-muted">
+                        Ish topishda yordam va maslahat.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- STATS -->
+<section class="py-5 text-white text-center"
+         style="background: linear-gradient(135deg,#0d6efd,#6610f2);">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4">
+                <h2 class="fw-bold">1500+</h2>
+                <p>Students</p>
+            </div>
+
+            <div class="col-md-4">
+                <h2 class="fw-bold">95%</h2>
+                <p>Completion Rate</p>
+            </div>
+
+            <div class="col-md-4">
+                <h2 class="fw-bold">40+</h2>
+                <p>Courses</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA -->
+<section class="py-5 text-center bg-white">
+    <div class="container">
+        <h2 class="fw-bold mb-3">Ready to Start? 🔥</h2>
+        <p class="text-muted mb-4">
+            Professional karyerangizni bugun boshlang
+        </p>
+        <a href="#" class="btn btn-success btn-lg rounded-pill px-5">
+            Join Now
+        </a>
+    </div>
+</section>

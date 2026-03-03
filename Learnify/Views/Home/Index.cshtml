@@ -1,95 +1,175 @@
 ﻿@{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "Home";
 }
 
-<!-- HERO -->
-<section class="py-5 text-white" style="background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);">
-    <div class="container text-center py-5">
-        <h1 class="display-4 fw-bold mb-3">About Learnify 🚀</h1>
-        <p class="lead">Zamonaviy ta'lim platformasi</p>
+<style>
+    .hero {
+        position: relative;
+        min-height: 90vh;
+        background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.7);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .blur-shape {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: #0d6efd;
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.4;
+        z-index: 1;
+    }
+
+    .shape1 { top: 10%; left: 5%; }
+    .shape2 { bottom: 10%; right: 5%; background:#6610f2; }
+
+    .feature-card {
+        border-radius: 20px;
+        transition: 0.3s;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+    }
+</style>
+
+
+<!-- HERO SECTION -->
+<section class="hero text-center">
+    <div class="blur-shape shape1"></div>
+    <div class="blur-shape shape2"></div>
+
+    <div class="container hero-content">
+        <h1 class="display-2 fw-bold mb-4">
+            Build Your IT Career 🚀
+        </h1>
+        <p class="lead mb-4">
+            Learnify bilan zamonaviy kasblarni o‘rganing
+        </p>
+
+        <a href="/Home/Courses" class="btn btn-primary btn-lg rounded-pill px-5 me-3">
+            Explore Courses
+        </a>
+
+        <a href="/Home/About" class="btn btn-outline-light btn-lg rounded-pill px-5">
+            Learn More
+        </a>
     </div>
 </section>
 
-<!-- ABOUT CONTENT -->
-<section class="py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            
-            <div class="col-lg-6 mb-4">
-                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
-                     class="img-fluid rounded-4 shadow">
-            </div>
 
-            <div class="col-lg-6">
-                <h2 class="fw-bold mb-4">Biz Kimimiz?</h2>
-                <p class="text-muted">
-                    Learnify bu online ta’lim platformasi bo‘lib,
-                    dasturlash, dizayn va zamonaviy IT yo‘nalishlarini
-                    professional darajada o‘rgatadi.
-                </p>
-
-                <p class="text-muted">
-                    Maqsadimiz — yoshlarni zamonaviy kasblarga o‘rgatish
-                    va real loyihalar orqali tajriba berish.
-                </p>
-
-                <div class="row mt-4">
-                    <div class="col-6">
-                        <h3 class="fw-bold text-primary">500+</h3>
-                        <p class="text-muted">Students</p>
-                    </div>
-                    <div class="col-6">
-                        <h3 class="fw-bold text-primary">25+</h3>
-                        <p class="text-muted">Courses</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- WHY US -->
+<!-- FEATURES -->
 <section class="py-5 bg-light">
     <div class="container text-center">
         <h2 class="fw-bold mb-5">Why Learnify?</h2>
 
         <div class="row g-4">
+
             <div class="col-md-4">
-                <div class="p-4 shadow rounded-4 bg-white h-100">
-                    <h4 class="fw-bold mb-3">🎯 Real Projects</h4>
+                <div class="bg-white p-4 feature-card h-100">
+                    <div class="fs-1 mb-3">🎯</div>
+                    <h5 class="fw-bold">Real Projects</h5>
                     <p class="text-muted">
-                        Amaliy loyihalar orqali tajriba orttirasiz.
+                        Amaliy loyihalar orqali haqiqiy tajriba.
                     </p>
                 </div>
             </div>
 
             <div class="col-md-4">
-                <div class="p-4 shadow rounded-4 bg-white h-100">
-                    <h4 class="fw-bold mb-3">👨‍🏫 Professional Mentors</h4>
+                <div class="bg-white p-4 feature-card h-100">
+                    <div class="fs-1 mb-3">👨‍🏫</div>
+                    <h5 class="fw-bold">Strong Mentors</h5>
                     <p class="text-muted">
-                        Tajribali ustozlar bilan ishlaysiz.
+                        Tajribali ustozlar bilan ishlash.
                     </p>
                 </div>
             </div>
 
             <div class="col-md-4">
-                <div class="p-4 shadow rounded-4 bg-white h-100">
-                    <h4 class="fw-bold mb-3">🚀 Fast Growth</h4>
+                <div class="bg-white p-4 feature-card h-100">
+                    <div class="fs-1 mb-3">🚀</div>
+                    <h5 class="fw-bold">Fast Growth</h5>
                     <p class="text-muted">
-                        Tez o‘sish va real natijalar.
+                        Qisqa vaqtda professional daraja.
                     </p>
                 </div>
             </div>
+
         </div>
-
     </div>
 </section>
 
-<!-- CTA -->
-<section class="py-5 text-white text-center" style="background: linear-gradient(135deg,#ff512f,#dd2476);">
+
+<!-- STATS -->
+<section class="py-5 text-white text-center"
+         style="background: linear-gradient(135deg,#0d6efd,#6610f2);">
     <div class="container">
-        <h2 class="fw-bold mb-4">Join Learnify Today</h2>
-        <a href="#" class="btn btn-light btn-lg px-5 fw-semibold">Get Started</a>
+        <div class="row">
+
+            <div class="col-md-4">
+                <h1 class="fw-bold">1500+</h1>
+                <p>Students</p>
+            </div>
+
+            <div class="col-md-4">
+                <h1 class="fw-bold">40+</h1>
+                <p>Courses</p>
+            </div>
+
+            <div class="col-md-4">
+                <h1 class="fw-bold">95%</h1>
+                <p>Success Rate</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- TESTIMONIAL -->
+<section class="py-5 bg-white text-center">
+    <div class="container">
+        <h2 class="fw-bold mb-5">What Students Say 💬</h2>
+
+        <div class="col-lg-8 mx-auto">
+            <div class="p-4 shadow rounded-4">
+                <p class="text-muted">
+                    “Learnify orqali backend o‘rgandim va hozir real loyihalarda ishlayapman.”
+                </p>
+                <h6 class="fw-bold mt-3">— Student</h6>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA -->
+<section class="py-5 text-center text-white"
+         style="background: linear-gradient(135deg,#ff416c,#ff4b2b);">
+    <div class="container">
+        <h2 class="fw-bold mb-3">Start Your Journey Today 🔥</h2>
+        <p class="mb-4 opacity-75">
+            Kelajak kasbingizni bugundan boshlang
+        </p>
+        <a href="/Home/Contact" class="btn btn-light btn-lg rounded-pill px-5">
+            Contact Us
+        </a>
     </div>
 </section>

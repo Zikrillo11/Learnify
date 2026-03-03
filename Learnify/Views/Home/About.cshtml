@@ -1,0 +1,180 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+
+<style>
+    .hero-about {
+        position: relative;
+        background: url('https://images.unsplash.com/photo-1581090700227-1a5ad44b0f02') center/cover no-repeat;
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+    .hero-about::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+    }
+    .hero-about .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .team-card, .testimonial-card {
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+
+    .team-card:hover, .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+    }
+
+    .stat-box {
+        background: #0d6efd;
+        color: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+
+    .stat-box:hover {
+        transform: scale(1.05);
+    }
+</style>
+
+<!-- HERO -->
+<section class="hero-about text-center">
+    <div class="container py-5">
+        <h1 class="display-3 fw-bold mb-3">About Learnify 🚀</h1>
+        <p class="lead mb-0">Zamonaviy ta'lim platformasi — Dasturlash va IT yo'nalishlari</p>
+    </div>
+</section>
+
+<!-- ABOUT CONTENT -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4">Biz Kimimiz?</h2>
+                <p class="text-muted">
+                    Learnify bu online ta’lim platformasi bo‘lib,
+                    dasturlash, dizayn va zamonaviy IT yo‘nalishlarini professional darajada o‘rgatadi.
+                </p>
+                <p class="text-muted">
+                    Maqsadimiz — yoshlarni zamonaviy kasblarga o‘rgatish
+                    va real loyihalar orqali tajriba berish.
+                </p>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+                     class="img-fluid rounded-4 shadow">
+            </div>
+        </div>
+
+        <!-- STATS -->
+        <div class="row text-center g-4 mb-5">
+            <div class="col-md-4">
+                <div class="stat-box">
+                    <h3 class="fw-bold">500+</h3>
+                    <p>Students</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-box">
+                    <h3 class="fw-bold">25+</h3>
+                    <p>Courses</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-box">
+                    <h3 class="fw-bold">50+</h3>
+                    <p>Projects</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section class="py-5 bg-light text-center">
+    <div class="container">
+        <h2 class="fw-bold mb-5">Our Mentors 👨‍🏫</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="team-card p-4 bg-white h-100">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="img-fluid rounded-circle mb-3" width="120">
+                    <h5 class="fw-bold">Zikrillo Yoldashev</h5>
+                    <p class="text-muted">Web Development</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-card p-4 bg-white h-100">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="img-fluid rounded-circle mb-3" width="120">
+                    <h5 class="fw-bold">Muhammad Amir Mamurjonov</h5>
+                    <p class="text-muted">UI/UX Design</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-card p-4 bg-white h-100">
+                    <img src="https://randomuser.me/api/portraits/men/44.jpg" class="img-fluid rounded-circle mb-3" width="120">
+                    <h5 class="fw-bold">Abdullo Abduvahobov</h5>
+                    <p class="text-muted">Texnik korikchi</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-card p-4 bg-white h-100">
+                    <img src="https://randomuser.me/api/portraits/men/44.jpg" class="img-fluid rounded-circle mb-3" width="120">
+                    <h5 class="fw-bold">Ziynatullo Hasanboyev</h5>
+                    <p class="text-muted">Bekorchi</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-card p-4 bg-white h-100">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" class="img-fluid rounded-circle mb-3" width="120">
+                    <h5 class="fw-bold">Abror Muxtoraliyev</h5>
+                    <p class="text-muted">Digital Marketing</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="py-5 text-center">
+    <div class="container">
+        <h2 class="fw-bold mb-5">What Students Say 💬</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="testimonial-card p-4 shadow h-100">
+                    <p class="text-muted">“Learnify orqali backend o‘rgandim va hozir real loyihalarda ishlayapman.”</p>
+                    <h6 class="fw-bold mt-3">— Student A</h6>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-card p-4 shadow h-100">
+                    <p class="text-muted">“Ustozlar juda professional va amaliy mashg‘ulotlar ajoyib.”</p>
+                    <h6 class="fw-bold mt-3">— Student B</h6>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-card p-4 shadow h-100">
+                    <p class="text-muted">“Learnify bilan tezda natija oldim va ish topdim.”</p>
+                    <h6 class="fw-bold mt-3">— Student C</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 text-white text-center" style="background: linear-gradient(135deg,#ff512f,#dd2476);">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Join Learnify Today 🚀</h2>
+        <a href="/Home/Courses" class="btn btn-light btn-lg px-5 fw-semibold">Start Learning</a>
+    </div>
+</section>
