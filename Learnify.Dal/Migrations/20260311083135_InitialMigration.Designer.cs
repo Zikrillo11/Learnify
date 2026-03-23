@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Learnify.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260221111519_InitialMigration")]
+    [Migration("20260311083135_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -87,6 +87,62 @@ namespace Learnify.DAL.Migrations
                     b.ToTable("Courses");
                 });
 
+            modelBuilder.Entity("Learnify.Domain.Entities.Admin", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Admins");
+                });
+
+            modelBuilder.Entity("Learnify.Domain.Entities.Enrollment", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("CourseId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("EnrolledAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<long>("StudentId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Enrollments");
+                });
+
             modelBuilder.Entity("Learnify.Domain.Entities.Payment", b =>
                 {
                     b.Property<long>("Id")
@@ -144,8 +200,7 @@ namespace Learnify.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("Students");
                 });
@@ -172,8 +227,7 @@ namespace Learnify.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("Teachers");
                 });
@@ -189,19 +243,23 @@ namespace Learnify.DAL.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -227,6 +285,25 @@ namespace Learnify.DAL.Migrations
                     b.Navigation("Teacher");
                 });
 
+            modelBuilder.Entity("Learnify.Domain.Entities.Enrollment", b =>
+                {
+                    b.HasOne("Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Learnify.Domain.Entities.User", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Student");
+                });
+
             modelBuilder.Entity("Learnify.Domain.Entities.Payment", b =>
                 {
                     b.HasOne("Course", "Course")
@@ -249,8 +326,8 @@ namespace Learnify.DAL.Migrations
             modelBuilder.Entity("Learnify.Domain.Entities.Student", b =>
                 {
                     b.HasOne("Learnify.Domain.Entities.User", "User")
-                        .WithOne("Student")
-                        .HasForeignKey("Learnify.Domain.Entities.Student", "UserId")
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -260,8 +337,8 @@ namespace Learnify.DAL.Migrations
             modelBuilder.Entity("Learnify.Domain.Entities.Teacher", b =>
                 {
                     b.HasOne("Learnify.Domain.Entities.User", "User")
-                        .WithOne("Teacher")
-                        .HasForeignKey("Learnify.Domain.Entities.Teacher", "UserId")
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -286,13 +363,6 @@ namespace Learnify.DAL.Migrations
             modelBuilder.Entity("Learnify.Domain.Entities.Teacher", b =>
                 {
                     b.Navigation("Courses");
-                });
-
-            modelBuilder.Entity("Learnify.Domain.Entities.User", b =>
-                {
-                    b.Navigation("Student");
-
-                    b.Navigation("Teacher");
                 });
 #pragma warning restore 612, 618
         }
