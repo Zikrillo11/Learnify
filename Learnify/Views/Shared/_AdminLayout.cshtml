@@ -1,92 +1,134 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8" />
     <title>Learnify Admin</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
     <style>
-            body {
-                font-family: 'Poppins', sans-serif;
-                background: linear-gradient(135deg, #1e3c72, #2a5298);
-                min-height: 100vh;
-            }
 
-            .sidebar {
-                width: 260px;
-                height: 100vh;
-                background: rgba(0, 0, 0, 0.8);
-                backdrop-filter: blur(10px);
-            }
+    body{
+        margin:0;
+        font-family:'Segoe UI';
+        background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    }
 
-                .sidebar a {
-                    color: #fff;
-                    padding: 12px;
-                    display: block;
-                    border-radius: 8px;
-                    margin-bottom: 5px;
-                    transition: 0.3s;
-                }
+    /* SIDEBAR */
+    .sidebar{
+        width:250px;
+        height:100vh;
+        position:fixed;
+        top:0;
+        left:0;
+        background:rgba(0,0,0,0.8);
+        backdrop-filter:blur(10px);
+        padding:20px;
+    }
 
-                    .sidebar a:hover {
-                        background: #4e73df;
-                        transform: translateX(5px);
-                    }
+    .sidebar h3{
+        color:white;
+        margin-bottom:30px;
+    }
 
-            .content {
-                flex: 1;
-                padding: 30px;
-            }
+    .sidebar a{
+        display:block;
+        color:#cbd5e1;
+        text-decoration:none;
+        padding:12px;
+        border-radius:10px;
+        margin-bottom:10px;
+        transition:0.3s;
+    }
 
-            .card-custom {
-                border: none;
-                border-radius: 15px;
-                background: rgba(255, 255, 255, 0.15);
-                backdrop-filter: blur(8px);
-                color: white;
-                transition: 0.3s;
-            }
+    .sidebar a:hover{
+        background:linear-gradient(90deg,#667eea,#764ba2);
+        color:white;
+        transform:translateX(5px);
+    }
 
-                .card-custom:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-                }
+    /* CONTENT */
+    .content{
+        margin-left:260px;
+        padding:30px;
+        color:white;
+    }
 
-            .logo {
-                font-weight: 600;
-                font-size: 22px;
-                color: #4e73df;
-            }
+    /* TOPBAR */
+    .topbar{
+        display:flex;
+        justify-content:space-between;
+        margin-bottom:30px;
+    }
+
+    /* CARD */
+    .card-wow{
+        border:none;
+        border-radius:20px;
+        padding:25px;
+        background:rgba(255,255,255,0.05);
+        backdrop-filter:blur(12px);
+        box-shadow:0 15px 40px rgba(0,0,0,0.6);
+        transition:0.35s;
+        position:relative;
+        overflow:hidden;
+        color:white;
+    }
+
+    .card-wow:hover{
+        transform:translateY(-10px) scale(1.03);
+        box-shadow:0 30px 70px rgba(0,0,0,0.8);
+    }
+
+    /* GLOW EFFECT */
+    .card-wow::before{
+        content:'';
+        position:absolute;
+        width:200%;
+        height:200%;
+        background:linear-gradient(45deg,transparent,#00f7ff,transparent);
+        animation:glow 5s linear infinite;
+        top:-50%;
+        left:-50%;
+        opacity:0.2;
+    }
+
+    /* MUHIM: @@ */
+    @@keyframes glow{
+        0%{transform:rotate(0deg);}
+        100%{transform:rotate(360deg);}
+    }
+
     </style>
+
 </head>
 <body>
 
-    <div class="d-flex">
-    
-        <!-- SIDEBAR -->
-        <div class="sidebar p-4 text-white">
-            <div class="logo mb-4 text-center">
-                🚀 Learnify
-            </div>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h3>🚀 Learnify</h3>
 
-            <a href="/Admin">Dashboard</a>
-            <a href="/Course">Courses</a>
-            <a href="/Teacher">Teachers</a>
-            <a href="/Student">Students</a>
+        <a asp-controller="Admin" asp-action="Index">Dashboard</a>
+        <a asp-controller="Students" asp-action="Index">Students</a>
+        <a asp-controller="Teachers" asp-action="Index">Teachers</a>
+        <a asp-controller="Courses" asp-action="Index">Courses</a>
+        <a asp-controller="Auth" asp-action="Logout">Logout</a>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <div class="topbar">
+            <h4>Admin Panel</h4>
+            <div>👤 Admin</div>
         </div>
-            
-        <!-- CONTENT -->
-        <div class="content">
-            @RenderBody()
-        </div>
+
+        @RenderBody()
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

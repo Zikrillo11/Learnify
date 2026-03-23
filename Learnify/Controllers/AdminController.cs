@@ -1,60 +1,44 @@
-﻿using Learnify.DAL.Data;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
-namespace Learnify.Controllers
+public class AdminController : Controller
 {
-    public class AdminController : Controller
+    // LOGIN PAGE (GET)
+    [HttpGet]
+    public IActionResult Login()
     {
-        private readonly AppDbContext _context;
+        return View();
+    }
 
-        public AdminController(AppDbContext context)
+    // LOGIN (POST)
+    [HttpPost]
+    public IActionResult Login(string username, string password)
+    {
+        if (username == "admin" && password == "1234")
         {
-            _context = context;
+            HttpContext.Session.SetString("Admin", username);
+            return RedirectToAction("Index");
         }
 
-        // GET: /Admin/Login
-        [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
+        ViewBag.Error = "Login yoki parol xato!";
+        return View();
+    }
 
-        // POST: /Admin/Login
-        [HttpPost]
-        public IActionResult Login(string username, string password)
-        {
-            var admin = _context.Admins
-                .FirstOrDefault(a => a.Username == username && a.Password == password);
+    // ADMIN PANEL
+    public IActionResult Index()
+    {
+        var admin = HttpContext.Session.GetString("Admin");
 
-            if (admin != null)
-            {
-                // Session ga saqlash
-                HttpContext.Session.SetString("AdminUsername", admin.Username);
-
-                return RedirectToAction("Index"); // ⚠️ shu yerda Dashboard emas, Index
-            }
-
-            ViewBag.Error = "Username yoki password xato!";
-            return View();
-        }
-
-        // GET: /Admin/Index
-        public IActionResult Index()
-        {
-            var adminUsername = HttpContext.Session.GetString("AdminUsername");
-            if (string.IsNullOrEmpty(adminUsername))
-                return RedirectToAction("Login");
-
-            ViewBag.AdminUsername = adminUsername;
-            return View(); // ⚠️ Views/Admin/Index.cshtml ishlaydi
-        }
-
-        // Logout
-        public IActionResult Logout()
-        {
-            HttpContext.Session.Remove("AdminUsername");
+        if (admin == null)
             return RedirectToAction("Login");
-        }
+
+        return View();
+    }
+
+    // LOGOUT
+    public IActionResult Logout()
+    {
+        HttpContext.Session.Remove("Admin");
+        return RedirectToAction("Login");
     }
 }
