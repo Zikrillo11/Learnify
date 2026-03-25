@@ -18,7 +18,7 @@ public class AdminController : Controller
         {
             HttpContext.Session.SetString("Admin", username);
             return RedirectToAction("Index");
-        }
+        }    
 
         ViewBag.Error = "Login yoki parol xato!";
         return View();
