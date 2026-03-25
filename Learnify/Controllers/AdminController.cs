@@ -7,7 +7,7 @@ public class AdminController : Controller
     [HttpGet]    
     public IActionResult Login()
     {
-        return View();
+        return View();    
     }
 
     // LOGIN (POST)
