@@ -20,7 +20,7 @@ public class AdminController : Controller
             return RedirectToAction("Index");
         }    
 
-        ViewBag.Error = "Login yoki parol xato!";
+        ViewBag.Error = "Login yoki parol xato!";   
         return View();
     }
 
