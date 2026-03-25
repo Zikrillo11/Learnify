@@ -14,7 +14,7 @@ public class AdminController : Controller
     [HttpPost]
     public IActionResult Login(string username, string password)
     {
-        if (username == "admin" && password == "1234")
+        if (username == "admin" && password == "1234")   
         {
             HttpContext.Session.SetString("Admin", username);
             return RedirectToAction("Index");
