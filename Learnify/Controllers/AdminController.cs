@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 public class AdminController : Controller
 {
     // LOGIN PAGE (GET)
-    [HttpGet]
+    [HttpGet]    
     public IActionResult Login()
     {
         return View();
