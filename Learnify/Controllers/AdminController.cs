@@ -17,7 +17,7 @@ public class AdminController : Controller
         if (username == "admin" && password == "1234")   
         {
             HttpContext.Session.SetString("Admin", username);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index");   
         }    
 
         ViewBag.Error = "Login yoki parol xato!";   
