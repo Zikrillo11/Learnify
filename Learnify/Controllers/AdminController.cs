@@ -8,7 +8,7 @@ public class AdminController : Controller
     public IActionResult Login()
     {
         return View();    
-    }
+    } 
 
     // LOGIN (POST)
     [HttpPost]
